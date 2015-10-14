@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>bytesnapper</groupId>
-	<name>Zaman</name>
+	<name>zaman-util</name>
 	<description>Date utility handles repetitive date tasks</description>
-	<artifactId>zaman</artifactId>
+	<artifactId>zaman-util</artifactId>
 	<url>http://bytesnapper.blogspot.com</url>
 	<dependencies>
 		<dependency>

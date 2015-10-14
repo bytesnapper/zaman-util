@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({AddDays.class})
+@SuiteClasses({AddDays.class,ResetTime.class})
 public class DateUtilTest {
 
 }

@@ -63,7 +63,11 @@ public class DateUtil {
 	 * @return
 	 */
 	public static Date addYears(Date date, int years) {
-		return date;
+		Date inputDate = resetTime(date);
+		calendar.setTime(inputDate);
+		calendar.add(Calendar.YEAR, years);
+		return calendar.getTime();
+		
 	}
 
 	/**

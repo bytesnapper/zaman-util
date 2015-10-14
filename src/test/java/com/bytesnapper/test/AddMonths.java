@@ -15,7 +15,6 @@ public class AddMonths {
 	@Test
 	public void test() {
 		Calendar calendar = Calendar.getInstance();
-		Date inputDate = calendar.getTime();
 		int months = 10;
 		int inMonth = calendar.get(Calendar.MONTH);
 		int inYear = calendar.get(Calendar.YEAR);
@@ -26,12 +25,12 @@ public class AddMonths {
 		int outYear = calendar.get(Calendar.YEAR);
 
 		if (months > 0 && inMonth > outMonth && !(outYear > inYear)) {
-			fail("Months  greater than 0 and output month is not greater than input month");
+			fail("Months param  greater than 0 and output month is not greater than input month");
 		}
-		
+		/*
 		System.out.println("Input Date: "+ inMonth+" " + outYear);
 		System.out.println("Output Date: "+outMonth + " " +outYear);
-		
+		*/
 		months=-2;
 		inMonth = calendar.get(Calendar.MONTH);
 		inYear = calendar.get(Calendar.YEAR);
@@ -40,12 +39,12 @@ public class AddMonths {
 		outMonth = calendar.get(Calendar.MONTH);
 		outYear = calendar.get(Calendar.YEAR);
 		
-		System.out.println("Input Date: "+ inMonth+" " + outYear);
-		System.out.println("Output Date: "+outMonth + " " +outYear);
+	/*	System.out.println("Input Date: "+ inMonth+" " + outYear);
+		System.out.println("Output Date: "+outMonth + " " +outYear);*/
 
 		
 		if (months < 0 && inMonth < outMonth && !(outYear < inYear)) {
-			fail("Month is less than 0 and output month is not less than input month");
+			fail("Months param is less than 0 and output month is not less than input month");
 		}
 		
 		months=0;
@@ -57,15 +56,15 @@ public class AddMonths {
 		outMonth = calendar.get(Calendar.MONTH);
 		outYear = calendar.get(Calendar.YEAR);
 		
-		System.out.println("Input Date: "+ inMonth+" " + outYear);
+/*		System.out.println("Input Date: "+ inMonth+" " + outYear);
 		System.out.println("Output Date: "+outMonth + " " +outYear);
-
+*/
 		if (months == 0 && inMonth != outMonth && outYear != inYear) {
-			fail("Month is equal to 0 and output month is not greater than input month");
+			fail("Months param is equal to 0 and output month is not greater than input month");
 		}
 
-		System.out.println("Input Date: "+ inMonth+" " + outYear);
-		System.out.println("Output Date: "+outMonth + " " +outYear);
+		/*System.out.println("Input Date: "+ inMonth+" " + outYear);
+		System.out.println("Output Date: "+outMonth + " " +outYear);*/
 
 	}
 

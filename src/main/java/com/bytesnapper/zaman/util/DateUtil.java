@@ -2,7 +2,6 @@ package com.bytesnapper.zaman.util;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 import com.bytesnapper.zaman.common.Interval;
 import com.bytesnapper.zaman.exceptions.NegativeIntervalException;
@@ -121,7 +120,12 @@ public class DateUtil {
 	 * @return
 	 */
 	public static Interval subtractIntervals(Interval first, Interval second) {
-		return second;
+		 if(first.isGreaterThan(second)){
+				throw new NegativeIntervalException("Interval cannot be negative.");
+		 }
+		Interval result=subtractor(first.getYears(), first.getMonths(), first.getDays(),first.getHours(), first.getMinutes(), first.getSeconds(),
+						 second.getYears(), second.getMonths(), second.getDays(),second.getHours(), second.getMinutes(), second.getSeconds());
+		return result;
 	}
 
 	/**

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import com.bytesnapper.zaman.common.Interval;
 
-public class IntervalGreaterThan {
+public class CompareInterval {
 
 	@Test
 	public void test() {

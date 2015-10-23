@@ -7,7 +7,7 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import com.bytesnapper.zaman.DateUtil;
+import com.bytesnapper.zaman.util.DateUtil;
 
 public class AddYears {
 

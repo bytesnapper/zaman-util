@@ -1,4 +1,4 @@
-package com.bytesnapper.zaman;
+package com.bytesnapper.zaman.common;
 
 public interface Constants {
 	

@@ -1,7 +1,11 @@
-package com.bytesnapper.zaman;
+package com.bytesnapper.zaman.util;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import com.bytesnapper.zaman.common.Interval;
+import com.bytesnapper.zaman.exceptions.NegativeIntervalException;
 
 public class DateUtil {
 
@@ -77,18 +81,37 @@ public class DateUtil {
 	 * @return
 	 */
 	public static Interval subtractDate(Date fromDate, Date toDate) {
-		return null;
+		if(fromDate.after(toDate)){
+			throw new NegativeIntervalException("Interval cannot be negative.");
+		}
+		calendar.setTime(fromDate);
+		int fromYears=calendar.get(Calendar.YEAR);
+		int fromMonths=calendar.get(Calendar.MONTH);
+		int fromDays=calendar.get(Calendar.DAY_OF_MONTH);
+		int fromHours=calendar.get(Calendar.HOUR_OF_DAY);
+		int fromMinutes=calendar.get(Calendar.MINUTE);
+		int fromSeconds=calendar.get(Calendar.SECOND);
+		
+		calendar.setTime(toDate);
+		int toYears=calendar.get(Calendar.YEAR);
+		int toMonths=calendar.get(Calendar.MONTH);
+		int toDays=calendar.get(Calendar.DAY_OF_MONTH);
+		int toHours=calendar.get(Calendar.HOUR_OF_DAY);
+		int toMinutes=calendar.get(Calendar.MINUTE);
+		int toSeconds=calendar.get(Calendar.SECOND);
+		
+		return subtractor(fromYears, fromMonths, fromDays, fromHours, fromMinutes, fromSeconds, toYears, toMonths, toDays, toHours, toMinutes, toSeconds);
 	}
 
 	/**
 	 * 
-	 * @param fromDate
+	 * @param to
 	 * @param toDate
 	 * @param unitConstant
 	 * @return
 	 */
-	public static Interval subtractAndConvert(Date fromDate, Date toDate, int Constant) {
-
+	public static Interval subtractDateAndConvert(Date fromDate, Date toDate, int Constant) {
+		
 		return null;
 	}
 
@@ -98,7 +121,7 @@ public class DateUtil {
 	 * @param second
 	 * @return
 	 */
-	public static Interval addiIntervals(Interval first, Interval second) {
+	public static Interval addIntervals(Interval first, Interval second) {
 		return second;
 	}
 
@@ -145,5 +168,78 @@ public class DateUtil {
 		Date outputDate = new Date(calendar.getTimeInMillis());
 		return outputDate;
 	}
+	
+	/**
+	 * 
+	 * @param fromYears
+	 * @param fromMonths
+	 * @param fromDays
+	 * @param fromHours
+	 * @param fromMinutes
+	 * @param fromSeconds
+	 * @param toYears
+	 * @param toMonths
+	 * @param toDays
+	 * @param toHours
+	 * @param toMinutes
+	 * @param toSeconds
+	 * @return
+	 */
+	private static Interval subtractor(int fromYears,int fromMonths,int fromDays,int fromHours,int fromMinutes,int fromSeconds,int toYears,int toMonths,int toDays,int toHours,int toMinutes,int toSeconds){
+	
+		if(toSeconds<fromSeconds){
+			toMinutes--;
+			toSeconds+=60;
+		}
+		
+		int outputSeconds=toSeconds-fromSeconds;
+		
+		if(toMinutes<fromMinutes){
+			toHours--;
+			toMinutes+=60;
+		}
+		
+		int outputMinutes=toMinutes-fromMinutes;
+		
+		if(toHours<fromHours){
+			toDays--;
+			toHours+=24;
+		}
+		
+		int outputHours=toHours-fromHours;
+		
 
+		if(toDays<fromDays){
+			toMonths--;
+			toDays+=30;
+		}
+		
+		int outputDays=toDays-fromDays;
+		
+		if(toMonths<fromMonths){
+			toYears--;
+			toMonths+=12;
+		}
+		
+		int outputMonths=toMonths-fromMonths;
+		
+		
+		if( !(toSeconds<fromSeconds) && !(toMinutes<fromMinutes) && !(toHours<fromHours) && !(toDays<fromDays) && !(toMonths<fromMonths)){
+			int outputYears=toYears-fromYears;
+			Interval interval = new Interval();
+			interval.setSeconds(outputSeconds);
+			interval.setMinutes(outputMinutes);
+			interval.setHours(outputHours);
+			interval.setDays(outputDays);
+			interval.setMonths(outputMonths);
+			interval.setYears(outputYears);
+			return interval;
+		}else{
+		
+		return subtractor(fromYears, fromMonths, fromDays, fromHours, fromMinutes, fromSeconds, toYears, toMonths, toDays, toHours, toMinutes, toSeconds);
+		}
+		
+	}
+	
+	
 }

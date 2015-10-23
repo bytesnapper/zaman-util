@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
 
-import com.bytesnapper.zaman.DateUtil;
+import com.bytesnapper.zaman.util.DateUtil;
 
 public class AddMonths {
 

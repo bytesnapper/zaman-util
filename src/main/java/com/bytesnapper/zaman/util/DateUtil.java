@@ -120,7 +120,7 @@ public class DateUtil {
 	 * @return
 	 */
 	public static Interval subtractIntervals(Interval first, Interval second) {
-		 if(first.isGreaterThan(second)){
+		 if(first.greaterThan(second)){
 				throw new NegativeIntervalException("Interval cannot be negative.");
 		 }
 		Interval result=subtractor(first.getYears(), first.getMonths(), first.getDays(),first.getHours(), first.getMinutes(), first.getSeconds(),

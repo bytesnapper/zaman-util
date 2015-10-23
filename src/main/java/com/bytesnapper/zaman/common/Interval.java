@@ -168,7 +168,7 @@ public class Interval implements Cloneable {
 	 * @param interval
 	 * @return true or false
 	 */
-	public boolean isGreaterThan(Interval interval) {
+	public boolean greaterThan(Interval interval) {
 		if (this.years > interval.getYears()) {
 			return true;
 		} else if (this.years < interval.getYears()) {
@@ -209,6 +209,13 @@ public class Interval implements Cloneable {
 		}
 	}
 
+	public boolean lessThan(Interval interval) {
+		if (!this.equals(interval) && !this.greaterThan(interval)) {
+			return true;
+		}
+		return false;
+	}
+
 	/**
 	 * Rests time to zero
 	 */
@@ -232,11 +239,13 @@ public class Interval implements Cloneable {
 		return equal;
 
 	}
+
 	@Override
-	public int hashCode(){
-		return years+months+days+hours+minutes+seconds;
-		
+	public int hashCode() {
+		return years + months + days + hours + minutes + seconds;
+
 	}
+
 	@Override
 	public Object clone() {
 		Interval clone = new Interval();

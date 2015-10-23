@@ -32,7 +32,8 @@ public class SubtractIntervals {
 			boolean check = (resultInterval.convertToSeconds() >= 0);
 			System.out.println(resultInterval.convertToSeconds());
 				Assert.assertTrue("Interval cannot be less than 0 sec",check);
-			
+				Assert.assertTrue("No exeption is thrown",firstInterval.greaterThan(secondInterval));
+
 		} catch (NegativeIntervalException e) {
 			//e.printStackTrace();
 			

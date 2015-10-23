@@ -25,7 +25,7 @@ public class CompareInterval {
 		secondInterval.setYears(9);
 		
 		//System.out.println("1st is Greater than 2nd: "+firstInterval.isGreaterThan(secondInterval));
-		Assert.assertTrue("1st is Greater than ",firstInterval.isGreaterThan(secondInterval));
+		Assert.assertTrue("1st is Greater than ",firstInterval.greaterThan(secondInterval));
 	}
 
 }

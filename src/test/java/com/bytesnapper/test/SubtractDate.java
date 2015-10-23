@@ -17,10 +17,10 @@ public class SubtractDate {
 	public void test() {
 	 Calendar calendar=Calendar.getInstance();
 	 Date first = calendar.getTime();  
-	 System.out.println("First "+first);
-	 calendar.add(Calendar.DATE, 365);	 
+//	 System.out.println("First "+first);
+	 calendar.add(Calendar.DATE, 1);	 
 	 Date second = calendar.getTime();
-	 System.out.println("second "+second);
+//	 System.out.println("second "+second);
 
 	 Interval interval = DateUtil.subtractDate(first, second) ;
 	 
@@ -30,7 +30,14 @@ public class SubtractDate {
 	 System.out.println("Days: "+interval.getDays());
 	 System.out.println("Month "+interval.getMonths());
 	 System.out.println("Years "+interval.getYears());
-*/
+	 
+	 System.out.println("To Months "+interval.convertToMonths());
+	 System.out.println("To Days "+interval.convertToDays());
+	 System.out.println("To Hours "+interval.convertToHours());
+	 System.out.println("To Mins "+interval.convertToMinutes());
+	 System.out.println("To Secs "+interval.convertToSeconds());*/
+
+
 	 
 
 	 

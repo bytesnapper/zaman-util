@@ -18,13 +18,13 @@ public class DateUtil {
 	 * @param numberOfDays
 	 *            if number of days is less than 0,the number of days will be
 	 *            removed from the input date
-	 * @param reset
+	 * @param resetTime
 	 *            if true date is reset to beginning of the day
 	 * @return date after adding the number of days
 	 */
-	public static Date addDays(Date date, int numberOfDays, boolean reset) {
+	public static Date addDays(Date date, int numberOfDays, boolean resetTime) {
 		Date tempDate;
-		if (reset) {
+		if (resetTime) {
 			tempDate = resetTime(date);
 		} else {
 			tempDate = date;
@@ -103,18 +103,7 @@ public class DateUtil {
 		return subtractor(fromYears, fromMonths, fromDays, fromHours, fromMinutes, fromSeconds, toYears, toMonths, toDays, toHours, toMinutes, toSeconds);
 	}
 
-	/**
-	 * 
-	 * @param to
-	 * @param toDate
-	 * @param unitConstant
-	 * @return
-	 */
-	public static Interval subtractDateAndConvert(Date fromDate, Date toDate, int Constant) {
-		
-		return null;
-	}
-
+	
 	/**
 	 * 
 	 * @param first
@@ -137,16 +126,7 @@ public class DateUtil {
 
 	/**
 	 * 
-	 * @param interval
-	 * @return
-	 */
-	public static int convertInterval(Interval interval, int unit) {
-		return 0;
-	}
-
-	/**
-	 * 
-	 * @return today Date after reset time
+	 * @return today Date after resetting time
 	 */
 	public static Date getToday() {
 		return resetTime(new Date());

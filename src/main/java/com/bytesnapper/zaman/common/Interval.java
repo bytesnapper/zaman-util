@@ -1,5 +1,7 @@
 package com.bytesnapper.zaman.common;
 
+import java.util.concurrent.TimeUnit;
+
 public class Interval {
 	
 	
@@ -99,4 +101,52 @@ public class Interval {
 	public void setSeconds(int seconds) {
 		this.seconds = seconds;
 	}
+	
+	/**
+	 *  * @return totalMonths
+	 */
+	public int convertToMonths(){
+		int totalMonths= years*12 + months;		
+		return totalMonths;		
+	}
+	
+	/**
+	 * 
+	 * @return totalDays
+	 */
+	public long convertToDays(){
+			long totalDays= years*365 + months * 30	+days;		
+		return totalDays;		
+	}
+	
+	/**
+	 * 
+	 * @return totalHours
+	 */
+	public long convertToHours(){
+		long totalHours= convertToDays() * 24 +hours;		
+	return totalHours;		
+	}
+	
+	/**
+	 * 
+	 * @return totalMinutes
+	 */
+	public long convertToMinutes() {
+		long totalMinutes= convertToHours() * 60 +minutes;
+		return totalMinutes;
+	}
+	
+	/**
+	 * 
+	 * @return totalSeconds
+	 */
+	public long convertToSeconds(){
+		long totalSeconds= convertToMinutes() * 60 +seconds;		
+	return totalSeconds;		
+	}
+
+	
+	
+	
 }

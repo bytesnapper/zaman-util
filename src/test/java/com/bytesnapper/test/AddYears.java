@@ -1,10 +1,9 @@
 package com.bytesnapper.test;
 
-import static org.junit.Assert.*;
-
 import java.util.Calendar;
 import java.util.Date;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.bytesnapper.zaman.util.DateUtil;
@@ -23,9 +22,7 @@ public class AddYears {
 		int outMonth = calendar.get(Calendar.MONTH);
 		int outYear = calendar.get(Calendar.YEAR);
 
-		if (years > 0 && !(outYear > inYear)) {
-			fail("Years param  greater than 0 and output year is not greater than input year");
-		}
+			Assert.assertFalse("Years param  greater than 0 and output year is not greater than input year",(years > 0 && !(outYear > inYear)));
 
 		System.out.println("Input Date: " + inMonth + " " + outYear);
 		System.out.println("Output Date: " + outMonth + " " + outYear);
@@ -41,9 +38,9 @@ public class AddYears {
 		System.out.println("Input Date: " + inMonth + " " + outYear);
 		System.out.println("Output Date: " + outMonth + " " + outYear);
 */
-		if (years < 0 && !(outYear < inYear)) {
-			fail("Years param is less than 0 and output year is not less than input year");
-		}
+		
+			Assert.assertFalse("Years param is less than 0 and output year is not less than input year", (years < 0 && !(outYear < inYear)) );
+		
 
 		years = 0;
 		inMonth = calendar.get(Calendar.MONTH);
@@ -57,9 +54,7 @@ public class AddYears {
 /*		System.out.println("Input Date: " + inMonth + " " + outYear);
 		System.out.println("Output Date: " + outMonth + " " + outYear);
 */
-		if (years == 0 && inMonth != outMonth && outYear != inYear) {
-			fail("Years param is equal to 0 and output year is not greater than input year");
-		}
+			Assert.assertFalse("Years param is equal to 0 and output year is not greater than input year",(years == 0 && inMonth != outMonth && outYear != inYear));
 
 /*		System.out.println("Input Date: " + inMonth + " " + outYear);
 		System.out.println("Output Date: " + outMonth + " " + outYear);

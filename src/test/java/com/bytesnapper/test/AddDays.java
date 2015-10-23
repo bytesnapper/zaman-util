@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.Date;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.bytesnapper.zaman.util.DateUtil;
@@ -12,42 +13,29 @@ public class AddDays {
 
 	@Test
 	public void test() {
-		int addition=10;
+		int addition = 10;
 		Date inputDate = new Date();
-		Date outputDate =DateUtil.addDays(inputDate,addition);
-		
-		if(outputDate==null){
-			fail("Date is null");
-		}
+		Date outputDate = DateUtil.addDays(inputDate, addition);
 
+		Assert.assertFalse("Date is null", outputDate == null);
 
-		
-		if(addition>0 && !outputDate.after(inputDate)){
-			fail("Number of Days is not added ");
+		Assert.assertFalse("Number of Days is not added ", addition > 0 && !outputDate.after(inputDate));
 
-		}
-		
-		 addition=-1;
-		 inputDate = new Date();
-		 outputDate =DateUtil.addDays(inputDate,addition);
-		 
-		if(addition<0 && !outputDate.before(inputDate)){
-			fail("Number of Days is not subtracted");
+		addition = -1;
+		inputDate = new Date();
+		outputDate = DateUtil.addDays(inputDate, addition);
 
-		}
-		
-		
-		 addition=0;
-		 inputDate = new Date();
-		 outputDate =DateUtil.addDays(inputDate,addition,false);
-		 
-		if(addition==0 && !inputDate.equals(outputDate)){
-			fail("Number of Days is 0 , it should not change input date");
+		Assert.assertFalse("Number of Days is not subtracted", addition < 0 && !outputDate.before(inputDate));
 
-		}
-		System.out.println("Input Date: "+ inputDate);
+		addition = 0;
+		inputDate = new Date();
+		outputDate = DateUtil.addDays(inputDate, addition, false);
 
-		System.out.println("Output Date: "+outputDate);
+		Assert.assertFalse("Number of Days is 0 , it should not change input date",	addition == 0 && !inputDate.equals(outputDate));
+
+		System.out.println("Input Date: " + inputDate);
+
+		System.out.println("Output Date: " + outputDate);
 	}
 
 }

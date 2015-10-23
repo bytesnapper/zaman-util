@@ -1,5 +1,10 @@
 package com.bytesnapper.zaman.exceptions;
 
+/**
+ * 
+ * @author Ahmed Hosni
+ *
+ */
 public class NegativeIntervalException extends RuntimeException {
 
 	public NegativeIntervalException() {

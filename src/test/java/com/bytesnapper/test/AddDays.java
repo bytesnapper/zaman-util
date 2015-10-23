@@ -29,11 +29,11 @@ public class AddDays {
 		inputDate = new Date();
 		outputDate = DateUtil.addDays(inputDate, addition, false);
 
-		Assert.assertFalse("Number of Days is 0 , it should not change input date",	addition == 0 && !inputDate.equals(outputDate));
+		Assert.assertFalse("Number of Days is 0 , it should not change input date",addition == 0 && !inputDate.equals(outputDate));
 
-		System.out.println("Input Date: " + inputDate);
-
-		System.out.println("Output Date: " + outputDate);
-	}
+		/*	System.out.println("Input Date: " + inputDate);
+			System.out.println("Output Date: " + outputDate);
+		 */	
+		}
 
 }

@@ -1,6 +1,11 @@
 package com.bytesnapper.zaman.common;
+/**
+ * 
+ * @author Ahmed Hosni
+ *
+ */
 
-public class Interval implements Cloneable {
+public class Interval {
 
 	private int years;
 
@@ -120,7 +125,7 @@ public class Interval implements Cloneable {
 	}
 
 	/**
-	 * * @return totalMonths
+	 * * @return totalMonths in interval
 	 */
 	public int convertToMonths() {
 		int totalMonths = years * 12 + months;
@@ -129,7 +134,7 @@ public class Interval implements Cloneable {
 
 	/**
 	 * 
-	 * @return totalDays
+	 * @return totalDays in in interval
 	 */
 	public long convertToDays() {
 		long totalDays = years * 365 + months * 30 + days;
@@ -138,7 +143,7 @@ public class Interval implements Cloneable {
 
 	/**
 	 * 
-	 * @return totalHours
+	 * @return totalHours in interval
 	 */
 	public long convertToHours() {
 		long totalHours = convertToDays() * 24 + hours;
@@ -147,7 +152,7 @@ public class Interval implements Cloneable {
 
 	/**
 	 * 
-	 * @return totalMinutes
+	 * @return totalMinutes in interval
 	 */
 	public long convertToMinutes() {
 		long totalMinutes = convertToHours() * 60 + minutes;
@@ -156,14 +161,14 @@ public class Interval implements Cloneable {
 
 	/**
 	 * 
-	 * @return totalSeconds
+	 * @return totalSeconds in interval
 	 */
 	public long convertToSeconds() {
 		long totalSeconds = convertToMinutes() * 60 + seconds;
 		return totalSeconds;
 	}
 
-	/**
+	/**Comparing between this instance of Interval and other instance 
 	 * 
 	 * @param interval
 	 * @return true or false
@@ -208,7 +213,11 @@ public class Interval implements Cloneable {
 
 		}
 	}
-
+	/**
+	 * 
+	 * @param interval
+	 * @return
+	 */
 	public boolean lessThan(Interval interval) {
 		if (!this.equals(interval) && !this.greaterThan(interval)) {
 			return true;
@@ -224,7 +233,10 @@ public class Interval implements Cloneable {
 		this.minutes = 0;
 		this.hours = 0;
 	}
-
+	/**Comparing between this instance of Interval and other instance  if any members is different the method return false, to exclude time(hours,minutes and seconds) from comparison user resetTime() method to reset time to zero
+	 * Overriding equals method in object, returns false if the parameter is null or another type
+	 * @param other should Interval object
+	 */
 	@Override
 	public boolean equals(Object other) {
 		boolean equal;
@@ -256,7 +268,10 @@ public class Interval implements Cloneable {
 		clone.setYears(this.years);
 		return clone;
 	}
-	
+	/**
+	 * @return contents of interval in as a String
+	 */
+	@Override
 	public String toString(){
 		return  years +" Years, "+months+" Months, "+days+" Days, "+hours+" Hours, "+minutes+" Minutes, "+seconds+ " Seconds";
 		

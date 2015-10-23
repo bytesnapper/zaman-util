@@ -5,7 +5,11 @@ import java.util.Date;
 
 import com.bytesnapper.zaman.common.Interval;
 import com.bytesnapper.zaman.exceptions.NegativeIntervalException;
-
+/**
+ * 
+ * @author Ahmed Hosni
+ *
+ */
 public class DateUtil {
 
 	private static Calendar calendar = Calendar.getInstance();
@@ -50,7 +54,7 @@ public class DateUtil {
 	 * 
 	 * @param date
 	 * @param months
-	 * @return
+	 * @return date after adding month
 	 */
 	public static Date addMonths(Date date, int months) {
 		Date inputDate = resetTime(date);
@@ -63,7 +67,7 @@ public class DateUtil {
 	 * 
 	 * @param date
 	 * @param years
-	 * @return
+	 * @return date after adding years
 	 */
 	public static Date addYears(Date date, int years) {
 		Date inputDate = resetTime(date);
@@ -77,7 +81,7 @@ public class DateUtil {
 	 * 
 	 * @param fromDate
 	 * @param toDate
-	 * @return
+	 * @return an interval 
 	 */
 	public static Interval subtractDate(Date fromDate, Date toDate) {
 		if(fromDate.after(toDate)){
@@ -153,7 +157,7 @@ public class DateUtil {
 		return outputDate;
 	}
 	
-	/**
+	/**Subtracts members of the interval recursively 
 	 * 
 	 * @param fromYears
 	 * @param fromMonths

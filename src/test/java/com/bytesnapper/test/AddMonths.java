@@ -52,15 +52,15 @@ public class AddMonths {
 		outYear = calendar.get(Calendar.YEAR);
 
 		/*
-		 * System.out.println("Input Date: "+ inMonth+" " + outYear);
-		 * System.out.println("Output Date: "+outMonth + " " +outYear);
+		   System.out.println("Input Date: "+ inMonth+" " + outYear);
+		   System.out.println("Output Date: "+outMonth + " " +outYear);
 		 */
 
 		Assert.assertFalse("Months param is equal to 0 and output month is not greater than input month", (months == 0 && inMonth != outMonth && outYear != inYear));
 
 		/*
-		 * System.out.println("Input Date: "+ inMonth+" " + outYear);
-		 * System.out.println("Output Date: "+outMonth + " " +outYear);
+		   System.out.println("Input Date: "+ inMonth+" " + outYear);
+		   System.out.println("Output Date: "+outMonth + " " +outYear);
 		 */
 
 	}

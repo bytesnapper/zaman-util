@@ -41,20 +41,20 @@ public class DateUtil {
 	 * 
 	 * @param date
 	 *            input date to add days to
-	 * @param numberOfDays
+	 * @param days
 	 *            if number of days is less than 0,the number of days will be
-	 *            removed from the input date
+	 *            subtracted from the input date
 	 * @return date after adding the number of days
 	 */
-	public static Date addDays(Date date, int numberOfDays) {
-		return addDays(date, numberOfDays, true);
+	public static Date addDays(Date date, int days) {
+		return addDays(date, days, true);
 	}
-
 	/**
 	 * 
-	 * @param date
-	 * @param months
-	 * @return date after adding month
+	 * @param date  input date to add months to
+	 * @param months if number of months is less than 0,the number of days will be
+	 *            subtracted from the input date
+	 * @return date after adding months
 	 */
 	public static Date addMonths(Date date, int months) {
 		Date inputDate = resetTime(date);
@@ -62,11 +62,11 @@ public class DateUtil {
 		calendar.add(Calendar.MONTH, months);
 		return calendar.getTime();
 	}
-
 	/**
 	 * 
-	 * @param date
-	 * @param years
+	 * @param date  input date to add months to
+	 * @param years if number of years is less than 0,the number of days will be
+	 *            subtracted from the input date
 	 * @return date after adding years
 	 */
 	public static Date addYears(Date date, int years) {
@@ -79,8 +79,8 @@ public class DateUtil {
 
 	/**
 	 * 
-	 * @param fromDate
-	 * @param toDate
+	 * @param fromDate date to start with
+	 * @param toDate   date to end with
 	 * @return an interval 
 	 */
 	public static Interval subtractDate(Date fromDate, Date toDate) {
@@ -109,19 +109,21 @@ public class DateUtil {
 	
 	/**
 	 * 
-	 * @param first
-	 * @param second
-	 * @return
+	 * @param first interval
+	 * @param second interval
+	 * @return interval contains adding result
 	 */
 	public static Interval addIntervals(Interval first, Interval second) {
-		return second;
-	}
+		Interval result=adder(first.getYears(), first.getMonths(), first.getDays(),first.getHours(), first.getMinutes(), first.getSeconds(),
+				 second.getYears(), second.getMonths(), second.getDays(),second.getHours(), second.getMinutes(), second.getSeconds());
+		return result;
+}
 
 	/**
 	 * 
-	 * @param first
-	 * @param second
-	 * @return
+	 * @param first interval
+	 * @param second interval
+	 * @return interval contains subtraction result
 	 */
 	public static Interval subtractIntervals(Interval first, Interval second) {
 		 if(first.greaterThan(second)){
@@ -157,7 +159,7 @@ public class DateUtil {
 		return outputDate;
 	}
 	
-	/**Subtracts members of the interval recursively 
+	/**Subtracts members of the interval  
 	 * 
 	 * @param fromYears
 	 * @param fromMonths
@@ -212,7 +214,6 @@ public class DateUtil {
 		int outputMonths=toMonths-fromMonths;
 		
 		
-		if( !(toSeconds<fromSeconds) && !(toMinutes<fromMinutes) && !(toHours<fromHours) && !(toDays<fromDays) && !(toMonths<fromMonths)){
 			int outputYears=toYears-fromYears;
 			Interval interval = new Interval();
 			interval.setSeconds(outputSeconds);
@@ -221,11 +222,62 @@ public class DateUtil {
 			interval.setDays(outputDays);
 			interval.setMonths(outputMonths);
 			interval.setYears(outputYears);
+
+
 			return interval;
-		}else{
+	
+	}
+	
+	
+	private static Interval adder(int fromYears,int fromMonths,int fromDays,int fromHours,int fromMinutes,int fromSeconds,int toYears,int toMonths,int toDays,int toHours,int toMinutes,int toSeconds){
 		
-		return subtractor(fromYears, fromMonths, fromDays, fromHours, fromMinutes, fromSeconds, toYears, toMonths, toDays, toHours, toMinutes, toSeconds);
+		int outputSeconds=toSeconds+fromSeconds;
+
+		if(outputSeconds>59){
+			toMinutes++;
+			outputSeconds-=60;
 		}
+		
+		int outputMinutes=toMinutes+fromMinutes;
+
+		
+		if(outputMinutes>59){
+			toHours++;
+			outputMinutes-=60;
+		}
+		
+		int outputHours=toHours+fromHours;
+
+		if(outputHours>23){
+			toDays++;
+			outputHours-=24;
+		}
+		
+		int outputDays=toDays+fromDays;
+
+
+		if(outputDays>29){
+			toMonths++;
+			outputDays-=30;
+		}
+		
+		int outputMonths=toMonths+fromMonths;
+
+		if(outputMonths>11){
+			toYears++;
+			outputMonths-=12;
+		}
+		
+		int outputYears=toYears+fromYears;
+		Interval interval = new Interval();
+		interval.setSeconds(outputSeconds);
+		interval.setMinutes(outputMinutes);
+		interval.setHours(outputHours);
+		interval.setDays(outputDays);
+		interval.setMonths(outputMonths);
+		interval.setYears(outputYears);
+		return interval;
+		
 		
 	}
 	

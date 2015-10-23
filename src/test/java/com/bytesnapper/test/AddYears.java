@@ -24,8 +24,9 @@ public class AddYears {
 
 			Assert.assertFalse("Years param  greater than 0 and output year is not greater than input year",(years > 0 && !(outYear > inYear)));
 
-		System.out.println("Input Date: " + inMonth + " " + outYear);
+	  /*System.out.println("Input Date: " + inMonth + " " + outYear);
 		System.out.println("Output Date: " + outMonth + " " + outYear);
+      */
 
 		years = -2;
 		inMonth = calendar.get(Calendar.MONTH);

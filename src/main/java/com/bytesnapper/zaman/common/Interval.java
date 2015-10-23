@@ -125,7 +125,7 @@ public class Interval {
 	}
 
 	/**
-	 * * @return totalMonths in interval
+	 *  @return totalMonths in interval
 	 */
 	public int convertToMonths() {
 		int totalMonths = years * 12 + months;
@@ -134,7 +134,7 @@ public class Interval {
 
 	/**
 	 * 
-	 * @return totalDays in in interval
+	 * @return totalDays in interval
 	 */
 	public long convertToDays() {
 		long totalDays = years * 365 + months * 30 + days;
@@ -168,9 +168,9 @@ public class Interval {
 		return totalSeconds;
 	}
 
-	/**Comparing between this instance of Interval and other instance 
-	 * 
-	 * @param interval
+	/**
+	 * Comparing between this instance of Interval and other instance 
+	 * @param interval to compare with
 	 * @return true or false
 	 */
 	public boolean greaterThan(Interval interval) {
@@ -215,8 +215,8 @@ public class Interval {
 	}
 	/**
 	 * 
-	 * @param interval
-	 * @return
+	 * @param interval to compare with
+	 * @return true or false
 	 */
 	public boolean lessThan(Interval interval) {
 		if (!this.equals(interval) && !this.greaterThan(interval)) {

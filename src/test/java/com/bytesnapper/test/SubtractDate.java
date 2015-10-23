@@ -16,13 +16,13 @@ public class SubtractDate {
 		Calendar calendar = Calendar.getInstance();
 		Date first = calendar.getTime();
 		System.out.println("First " + first);
-		calendar.add(Calendar.DATE, 500);
+		calendar.add(Calendar.DATE, 100);
 		Date second = calendar.getTime();
 		System.out.println("second " + second);
 
 		Interval interval = DateUtil.subtractDate(first, second);
 
-/* 		System.out.println("Seconds " + interval.getSeconds());
+  		System.out.println("Seconds " + interval.getSeconds());
 		System.out.println("Minutes " + interval.getMinutes());
 		System.out.println("Hours " + interval.getHours());
 		System.out.println("Days: " + interval.getDays());
@@ -34,7 +34,7 @@ public class SubtractDate {
 		System.out.println("To Hours " + interval.convertToHours());
 		System.out.println("To Mins " + interval.convertToMinutes());
 		System.out.println("To Secs " + interval.convertToSeconds());
-*/
+
 		boolean checAll = (first.before(second) && interval.getYears() < 1 && interval.getDays() < 1 && interval.getHours() < 1 && interval.getMinutes() < 1 && interval.getSeconds() < 1);
 
 		Assert.assertFalse("First date is before second date so interval elements cannot be less than one", checAll);

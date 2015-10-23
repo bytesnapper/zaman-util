@@ -7,7 +7,7 @@ import com.bytesnapper.zaman.common.Interval;
 import com.bytesnapper.zaman.exceptions.NegativeIntervalException;
 import com.bytesnapper.zaman.util.DateUtil;
 
-public class SubtractIntervals {
+public class NegativeIntervalWithInterval {
 
 	@Test
 	public void test() {
@@ -29,13 +29,13 @@ public class SubtractIntervals {
 
 		try {
 			Interval resultInterval = DateUtil.subtractIntervals(firstInterval, secondInterval);
-			boolean check = (resultInterval.convertToSeconds() >= 0);
 			System.out.println(resultInterval.convertToSeconds());
 			System.out.println(resultInterval.toString());
-				Assert.assertTrue("Interval cannot be less than 0 sec",check);
 				System.out.println(firstInterval.greaterThan(secondInterval));
+				Assert.assertTrue("No exeption is thrown",firstInterval.greaterThan(secondInterval));
+
 		} catch (NegativeIntervalException e) {
-		//	e.printStackTrace();
+		//e.printStackTrace();
 			
 			
 		}

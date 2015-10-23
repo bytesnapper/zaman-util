@@ -256,5 +256,10 @@ public class Interval implements Cloneable {
 		clone.setYears(this.years);
 		return clone;
 	}
+	
+	public String toString(){
+		return  years +" Years, "+months+" Months, "+days+" Days, "+hours+" Hours, "+minutes+" Minutes, "+seconds+ " Seconds";
+		
+	}
 
 }

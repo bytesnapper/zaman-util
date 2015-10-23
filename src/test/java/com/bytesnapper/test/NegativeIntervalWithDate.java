@@ -12,7 +12,7 @@ import com.bytesnapper.zaman.common.Interval;
 import com.bytesnapper.zaman.exceptions.NegativeIntervalException;
 import com.bytesnapper.zaman.util.DateUtil;
 
-public class NegativeInterval {
+public class NegativeIntervalWithDate {
 
 	@Test
 	public void test() {

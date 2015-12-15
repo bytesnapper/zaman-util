@@ -1,1 +1,3 @@
-com.bytesnapper
+com.bytesnapper.zaman.common
+com.bytesnapper.zaman.exceptions
+com.bytesnapper.zaman.util

@@ -6,7 +6,7 @@ import java.util.Date;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.bytesnapper.zaman.util.DateUtil;
+import com.bytesnapper.zaman.util.ZamanUtil;
 
 public class AddYears {
 
@@ -17,7 +17,7 @@ public class AddYears {
 		int inMonth = calendar.get(Calendar.MONTH);
 		int inYear = calendar.get(Calendar.YEAR);
 
-		Date outputDate = DateUtil.addYears(calendar.getTime(), years);
+		Date outputDate = ZamanUtil.addYears(calendar.getTime(), years);
 		calendar.setTime(outputDate);
 		int outMonth = calendar.get(Calendar.MONTH);
 		int outYear = calendar.get(Calendar.YEAR);
@@ -31,7 +31,7 @@ public class AddYears {
 		years = -2;
 		inMonth = calendar.get(Calendar.MONTH);
 		inYear = calendar.get(Calendar.YEAR);
-		outputDate = DateUtil.addYears(calendar.getTime(), years);
+		outputDate = ZamanUtil.addYears(calendar.getTime(), years);
 		calendar.setTime(outputDate);
 		outMonth = calendar.get(Calendar.MONTH);
 		outYear = calendar.get(Calendar.YEAR);
@@ -47,7 +47,7 @@ public class AddYears {
 		inMonth = calendar.get(Calendar.MONTH);
 		inYear = calendar.get(Calendar.YEAR);
 
-		outputDate = DateUtil.addYears(calendar.getTime(), years);
+		outputDate = ZamanUtil.addYears(calendar.getTime(), years);
 		calendar.setTime(outputDate);
 		outMonth = calendar.get(Calendar.MONTH);
 		outYear = calendar.get(Calendar.YEAR);

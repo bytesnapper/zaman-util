@@ -8,6 +8,6 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({AddDays.class,ResetTime.class,AddMonths.class,AddYears.class,SubtractDate.class,
 	NegativeIntervalWithDate.class,NegativeIntervalWithInterval.class,SubtractIntervals.class,AddIntervals.class
 	})
-public class DateUtilTest {
+public class ZamanUtilTest {
 
 }

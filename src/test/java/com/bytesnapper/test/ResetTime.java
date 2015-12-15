@@ -7,7 +7,7 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import com.bytesnapper.zaman.util.DateUtil;
+import com.bytesnapper.zaman.util.ZamanUtil;
 
 public class ResetTime {
 
@@ -15,7 +15,7 @@ public class ResetTime {
 	public void test() {
 		Date inputDate= new Date();
 		SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
-		Date outputDate=DateUtil.resetTime(inputDate);
+		Date outputDate=ZamanUtil.resetTime(inputDate);
 //		String dateStrIn= format.format(inputDate);
 		String outputDateStr= format.format(outputDate);
 		//System.out.println(dateStrIn);

@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import com.bytesnapper.zaman.common.Interval;
 import com.bytesnapper.zaman.exceptions.NegativeIntervalException;
-import com.bytesnapper.zaman.util.DateUtil;
+import com.bytesnapper.zaman.util.ZamanUtil;
 
 public class NegativeIntervalWithInterval {
 
@@ -28,7 +28,7 @@ public class NegativeIntervalWithInterval {
 		secondInterval.setYears(1);
 
 		try {
-			Interval resultInterval = DateUtil.subtractIntervals(firstInterval, secondInterval);
+			Interval resultInterval = ZamanUtil.subtractIntervals(firstInterval, secondInterval);
 			System.out.println(resultInterval.convertToSeconds());
 			System.out.println(resultInterval.toString());
 				System.out.println(firstInterval.greaterThan(secondInterval));

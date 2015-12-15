@@ -5,7 +5,7 @@ import java.util.Date;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.bytesnapper.zaman.util.DateUtil;
+import com.bytesnapper.zaman.util.ZamanUtil;
 
 public class AddDays {
 
@@ -13,7 +13,7 @@ public class AddDays {
 	public void test() {
 		int addition = 10;
 		Date inputDate = new Date();
-		Date outputDate = DateUtil.addDays(inputDate, addition);
+		Date outputDate = ZamanUtil.addDays(inputDate, addition);
 
 		Assert.assertFalse("Date is null", outputDate == null);
 
@@ -21,13 +21,13 @@ public class AddDays {
 
 		addition = -1;
 		inputDate = new Date();
-		outputDate = DateUtil.addDays(inputDate, addition);
+		outputDate = ZamanUtil.addDays(inputDate, addition);
 
 		Assert.assertFalse("Number of Days is not subtracted", addition < 0 && !outputDate.before(inputDate));
 
 		addition = 0;
 		inputDate = new Date();
-		outputDate = DateUtil.addDays(inputDate, addition, false);
+		outputDate = ZamanUtil.addDays(inputDate, addition, false);
 
 		Assert.assertFalse("Number of Days is 0 , it should not change input date",addition == 0 && !inputDate.equals(outputDate));
 

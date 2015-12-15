@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import com.bytesnapper.zaman.common.Interval;
 import com.bytesnapper.zaman.exceptions.NegativeIntervalException;
-import com.bytesnapper.zaman.util.DateUtil;
+import com.bytesnapper.zaman.util.ZamanUtil;
 
 public class NegativeIntervalWithDate {
 
@@ -24,7 +24,7 @@ public class NegativeIntervalWithDate {
 			 calendar.setTime(new Date());
 			 Date toDate = calendar.getTime();
 			 System.out.println("second "+toDate); 
-			 Interval interval = DateUtil.subtractDate(fromDate, toDate) ;			 
+			 Interval interval = ZamanUtil.subtractDate(fromDate, toDate) ;			 
 			 System.out.println("Seconds "+interval.getSeconds());
 			 System.out.println("Minutes "+interval.getMinutes());
 			 System.out.println("Hours "+interval.getHours());

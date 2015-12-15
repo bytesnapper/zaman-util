@@ -10,7 +10,7 @@ import com.bytesnapper.zaman.exceptions.NegativeIntervalException;
  * @author Ahmed Hosni
  *
  */
-public class DateUtil {
+public class ZamanUtil {
 
 	private static Calendar calendar = Calendar.getInstance();
 

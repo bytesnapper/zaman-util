@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.bytesnapper.zaman.common.Interval;
-import com.bytesnapper.zaman.util.DateUtil;
+import com.bytesnapper.zaman.util.ZamanUtil;
 
 public class AddIntervals {
 
@@ -26,7 +26,7 @@ public class AddIntervals {
 		secondInterval.setDays(29);
 		secondInterval.setYears(1);
 		
-		Interval resultInterval = DateUtil.addIntervals(firstInterval, secondInterval);
+		Interval resultInterval = ZamanUtil.addIntervals(firstInterval, secondInterval);
 		boolean check = (resultInterval.convertToSeconds()==(firstInterval.convertToSeconds()+secondInterval.convertToSeconds()));
 	
 		

@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.bytesnapper.zaman.common.Interval;
-import com.bytesnapper.zaman.util.DateUtil;
+import com.bytesnapper.zaman.util.ZamanUtil;
 
 public class SubtractDate {
 
@@ -20,7 +20,7 @@ public class SubtractDate {
 		Date second = calendar.getTime();
 		System.out.println("second " + second);
 
-		Interval interval = DateUtil.subtractDate(first, second);
+		Interval interval = ZamanUtil.subtractDate(first, second);
 
   		System.out.println("Seconds " + interval.getSeconds());
 		System.out.println("Minutes " + interval.getMinutes());

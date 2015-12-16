@@ -233,7 +233,7 @@ public class Interval {
 		this.minutes = 0;
 		this.hours = 0;
 	}
-	/**Comparing between this instance of Interval and other instance  if any members is different the method return false, to exclude time(hours,minutes and seconds) from comparison user resetTime() method to reset time to zero
+	/**Comparing between this instance of Interval and other instance  if any members is different the method return false, to exclude time(hours,minutes and seconds) from comparison use resetTime() method to reset time to zero
 	 * Overriding equals method in object, returns false if the parameter is null or another type
 	 * @param other should Interval object
 	 */

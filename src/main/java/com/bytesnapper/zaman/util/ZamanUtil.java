@@ -25,17 +25,14 @@ public class ZamanUtil {
 	 *            if true date is reset to beginning of the day
 	 * @return date after adding the number of days
 	 */
-	public static Date addDays(Date date, int numberOfDays, boolean resetTime) {
-		Date tempDate;
-		if (resetTime) {
-			tempDate = resetTime(date);
-		} else {
-			tempDate = date;
-		}
-		calendar.setTime(tempDate);
+	public static Date addDaysWithoutResttingTime(Date date, int numberOfDays) {
+		calendar.setTime(date);
 		calendar.add(Calendar.DATE, numberOfDays);
 		return calendar.getTime();
 	}
+	
+	
+//		
 
 	/**
 	 * 
@@ -46,8 +43,11 @@ public class ZamanUtil {
 	 *            subtracted from the input date
 	 * @return date after adding the number of days
 	 */
-	public static Date addDays(Date date, int days) {
-		return addDays(date, days, true);
+	public static Date addDays(Date date, int numberOfDays) {
+		Date resetDate = resetTime(date);
+		calendar.setTime(resetDate);
+		calendar.add(Calendar.DATE, numberOfDays);
+		return calendar.getTime();
 	}
 	/**
 	 * 

@@ -27,7 +27,7 @@ public class AddDays {
 
 		addition = 0;
 		inputDate = new Date();
-		outputDate = ZamanUtil.addDays(inputDate, addition, false);
+		outputDate = ZamanUtil.addDaysWithoutResttingTime(inputDate, addition);
 
 		Assert.assertFalse("Number of Days is 0 , it should not change input date",addition == 0 && !inputDate.equals(outputDate));
 

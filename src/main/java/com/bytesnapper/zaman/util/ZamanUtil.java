@@ -21,8 +21,6 @@ public class ZamanUtil {
 	 * @param numberOfDays
 	 *            if number of days is less than 0,the number of days will be
 	 *            removed from the input date
-	 * @param resetTime
-	 *            if true date is reset to beginning of the day
 	 * @return date after adding the number of days
 	 */
 	public static Date addDaysWithoutResttingTime(Date date, int numberOfDays) {

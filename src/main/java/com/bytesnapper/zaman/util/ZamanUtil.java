@@ -36,7 +36,7 @@ public class ZamanUtil {
 	 * 
 	 * @param date
 	 *            input date to add days to
-	 * @param days
+	 * @param numberOfDays
 	 *            if number of days is less than 0,the number of days will be
 	 *            subtracted from the input date
 	 * @return date after adding the number of days

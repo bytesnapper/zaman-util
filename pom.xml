@@ -3,9 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>bytesnapper</groupId>
 	<name>zaman-util</name>
+	<version>0.0.01</version>
 	<description>Date utility handles repetitive date tasks</description>
 	<artifactId>zaman-util</artifactId>
-	<url>http://bytesnapper.blogspot.com</url>
+	<url>www.bytesnapper.com</url>
 	<build>
 		<plugins>
 			<plugin>
@@ -40,6 +41,5 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<version>0.0.01</version>
 
 </project>
